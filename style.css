@@ -1,29 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+}
 body{
     background-color: khaki;
 }
 .content{
     margin: 0 auto;
+    margin-top: 1rem;
     width: 50vw;
-    display: flex;
-    flex-direction: column;
 }
-.slider{
-    margin: 0 25vw 0 25vw;
-    display: flex;
+#slider{
+    width: 100%;
     overflow: hidden;
 }
-
-img{
-    width: 100%;
-    height: 100%;
+.inner-slider{
+    overflow: hidden;
+    width: 400%;
+    aspect-ratio: 16/3;
 }
-.img-container{
-    height: 50vh;
+img{
+    width: 25%;
+    height: 100%;
 }
 .container{
     display: flex;
 }
-
 .subtitle-container{
     flex: 5;
 }
@@ -35,4 +37,16 @@ img{
 }
 .controller{
     flex: 2;
+}
+#slide1:checked ~ .inner-slider{
+    margin-left: 0%;
+}
+#slide2:checked ~ .inner-slider{
+    margin-left: 100%;
+}
+#slide3:checked ~ .inner-slider{
+    margin-left: 200%;
+}
+#slide4:checked ~ .first{
+    margin-left: 300%;
 }
