@@ -2,16 +2,30 @@
     margin: 0;
     padding: 0;
 }
+:root{
+    --black: #2B2D42;
+    --dark-green: #114B5F;
+    --green: #1A936F;
+    --light-green: #88D498;
+    --lighter-green: #C6DABF;
+    --cream: #F3E9D2;
+}
 body{
-    background-color: khaki;
+    background-color: var(--lighter-green);
 }
 .content{
     margin: 0 auto;
     margin-top: 1rem;
-    width: 50vw;
+    width: 40vw;
 }
 #slider{
     width: 100%;
+    background-color: var(--cream);
+    padding: 2rem;
+    border: none;
+    border-radius: 4rem;
+}
+.overflow{
     overflow: hidden;
 }
 .inner-slider{
@@ -25,26 +39,53 @@ img{
     flex-shrink: 0;
     width: 25%;
     height: 100%;
+    border: none;
+    border-radius: 2rem;
 }
-.container{
+.bottom-container{
+    margin-top: 4rem;
     display: flex;
 }
-.subtitle-container{
+.subtitle-wrapper{
     flex: 5;
+    overflow: hidden;
+}
+.subtitle-container{
+    width: 400%;
+    display: flex;
+    flex-direction: row;
 }
 .subtitle{
+    width: 25%;
     font-size: 1.5rem;
     font-weight: 500;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: sienna;
+    color: var(--dark-green);
+}
+input{
+    display: none;
 }
 .controller{
     flex: 2;
+    height: 10rem;
+    width: 100%;
+    display: flex;
+    
+    gap: 1rem;
 }
-
+.label-navigator {
+    aspect-ratio: 1/1;
+    height: 16%;
+    border: solid var(--green) 0.5rem;
+    border-radius: 50%;
+    background-color: var(--green);
+}
+.label-navigator:hover{
+    background-color: var(--light-green);
+}
 #slide1:checked ~ .inner-slider{
     margin-left: 0%;
-} 
+}
 #slide2:checked ~ .inner-slider{
     margin-left: -100%;
 } 
@@ -54,16 +95,27 @@ img{
 #slide4:checked ~ .inner-slider{
     margin-left: -300%;
 } 
-/*
-#slide1:checked ~ .content #slider .inner-slider {
-    margin-left: -20%;
+#slide1:checked ~ .subtitle-container{
+    margin-left: 0%;
 }
-#slide2:checked ~ .content #slider .inner-slider {
+#slide2:checked ~ .subtitle-container{
     margin-left: -100%;
-}
-#slide3:checked ~ .content #slider .inner-slider {
+} 
+#slide3:checked ~ .subtitle-container{
     margin-left: -200%;
-}
-#slide4:checked ~ .content #slider .inner-slider {
+} 
+#slide4:checked ~ .subtitle-container{
     margin-left: -300%;
-} */
+} 
+#slide1:checked ~ .bottom-container .controller .label-navigator:nth-of-type(1) {
+    background-color: transparent;
+}
+#slide2:checked ~ .bottom-container .controller .label-navigator:nth-of-type(2) {
+    background-color: transparent;
+}
+#slide3:checked ~ .bottom-container .controller .label-navigator:nth-of-type(3) {
+    background-color: transparent;
+}
+#slide4:checked ~ .bottom-container .controller .label-navigator:nth-of-type(4) {
+    background-color: transparent;
+}
