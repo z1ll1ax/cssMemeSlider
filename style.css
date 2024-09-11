@@ -16,7 +16,7 @@ body{
 .content{
     margin: 0 auto;
     margin-top: 1rem;
-    width: 40vw;
+    width: 60vw;
 }
 #slider{
     width: 100%;
@@ -54,9 +54,11 @@ img{
     width: 400%;
     display: flex;
     flex-direction: row;
+    transition: all 1s;
 }
 .subtitle{
     width: 25%;
+    margin-left: 5rem;
     font-size: 1.5rem;
     font-weight: 500;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -70,15 +72,16 @@ input{
     height: 10rem;
     width: 100%;
     display: flex;
-    
-    gap: 1rem;
+    gap: 0.1rem;
 }
 .label-navigator {
     aspect-ratio: 1/1;
     height: 16%;
-    border: solid var(--green) 0.5rem;
-    border-radius: 50%;
     background-color: var(--green);
+    border-width: 1rem;
+    border-color: var(--cream);
+    border-style: solid;
+    border-radius: 50%;
 }
 .label-navigator:hover{
     background-color: var(--light-green);
@@ -95,27 +98,62 @@ input{
 #slide4:checked ~ .inner-slider{
     margin-left: -300%;
 } 
-#slide1:checked ~ .subtitle-container{
+#slide1:checked ~ .bottom-container .subtitle-wrapper .subtitle-container{
     margin-left: 0%;
 }
-#slide2:checked ~ .subtitle-container{
+#slide2:checked ~ .bottom-container .subtitle-wrapper .subtitle-container{
     margin-left: -100%;
 } 
-#slide3:checked ~ .subtitle-container{
+#slide3:checked ~ .bottom-container .subtitle-wrapper .subtitle-container{
     margin-left: -200%;
 } 
-#slide4:checked ~ .subtitle-container{
+#slide4:checked ~ .bottom-container .subtitle-wrapper .subtitle-container{
     margin-left: -300%;
 } 
 #slide1:checked ~ .bottom-container .controller .label-navigator:nth-of-type(1) {
-    background-color: transparent;
+    background-color: var(--black);
 }
 #slide2:checked ~ .bottom-container .controller .label-navigator:nth-of-type(2) {
-    background-color: transparent;
+    background-color: var(--black);
 }
 #slide3:checked ~ .bottom-container .controller .label-navigator:nth-of-type(3) {
-    background-color: transparent;
+    background-color: var(--black);
 }
 #slide4:checked ~ .bottom-container .controller .label-navigator:nth-of-type(4) {
-    background-color: transparent;
+    background-color: var(--black);
+}
+
+#slide1:checked ~ .bottom-container .controller .label-navigator:nth-of-type(1):hover {
+    background-color: var(--dark-green);
+}
+#slide2:checked ~ .bottom-container .controller .label-navigator:nth-of-type(2):hover {
+    background-color: var(--dark-green);
+}
+#slide3:checked ~ .bottom-container .controller .label-navigator:nth-of-type(3):hover {
+    background-color: var(--dark-green);
+}
+#slide4:checked ~ .bottom-container .controller .label-navigator:nth-of-type(4):hover {
+    background-color: var(--dark-green);
+}
+@media (max-width: 1023px) {
+    .bottom-container{
+        flex-direction: column;
+        margin-top: 1rem;
+    }
+    .subtitle-wrapper{
+        order: 2;
+    }
+    .subtitle-container{
+        justify-content: center;
+    }
+    .subtitle{
+        margin-left: 10vw;
+    }
+    .controller{
+        order: 1;
+        justify-content: center;
+    }
+    .label-navigator{
+        height: 1rem;
+    }
 }
