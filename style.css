@@ -17,11 +17,13 @@ body{
     margin: 0 auto;
     margin-top: 1rem;
     width: 60vw;
+    max-width: 50rem;
 }
 #slider{
     width: 100%;
     background-color: var(--cream);
     padding: 2rem;
+    margin-left: -2rem;
     border: none;
     border-radius: 4rem;
 }
@@ -85,6 +87,7 @@ input{
 }
 .label-navigator:hover{
     background-color: var(--light-green);
+    cursor: pointer;
 }
 #slide1:checked ~ .inner-slider{
     margin-left: 0%;
@@ -124,15 +127,19 @@ input{
 }
 
 #slide1:checked ~ .bottom-container .controller .label-navigator:nth-of-type(1):hover {
+    cursor: pointer;
     background-color: var(--dark-green);
 }
 #slide2:checked ~ .bottom-container .controller .label-navigator:nth-of-type(2):hover {
+    cursor: pointer;
     background-color: var(--dark-green);
 }
 #slide3:checked ~ .bottom-container .controller .label-navigator:nth-of-type(3):hover {
+    cursor: pointer;
     background-color: var(--dark-green);
 }
 #slide4:checked ~ .bottom-container .controller .label-navigator:nth-of-type(4):hover {
+    cursor: pointer;
     background-color: var(--dark-green);
 }
 @media (max-width: 1023px) {
